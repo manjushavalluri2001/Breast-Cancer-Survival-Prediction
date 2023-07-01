@@ -1,0 +1,101 @@
+**Extraction of first 5 columns**
+     Patient_ID   Age  Gender  ...  Date_of_Surgery  Date_of_Last_Visit  Patient_Status
+0  TCGA-D8-A1XD  36.0  FEMALE  ...        15-Jan-17           19-Jun-17           Alive
+1  TCGA-EW-A1OX  43.0  FEMALE  ...        26-Apr-17           09-Nov-18            Dead
+2  TCGA-A8-A079  69.0  FEMALE  ...        08-Sep-17           09-Jun-18           Alive
+3  TCGA-D8-A1XR  56.0  FEMALE  ...        25-Jan-17           12-Jul-17           Alive
+4  TCGA-BH-A0BF  56.0  FEMALE  ...        06-May-17           27-Jun-19            Dead
+
+[5 rows x 16 columns]
+_____
+**Extraction of null values**
+Patient_ID             7
+Age                    7
+Gender                 7
+Protein1               7
+Protein2               7
+Protein3               7
+Protein4               7
+Tumour_Stage           7
+Histology              7
+ER status              7
+PR status              7
+HER2 status            7
+Surgery_type           7
+Date_of_Surgery        7
+Date_of_Last_Visit    24
+Patient_Status        20
+dtype: int64
+_____
+**df info after removing null values**
+<class 'pandas.core.frame.DataFrame'>
+Index: 317 entries, 0 to 333
+Data columns (total 16 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   Patient_ID          317 non-null    object 
+ 1   Age                 317 non-null    float64
+ 2   Gender              317 non-null    object 
+ 3   Protein1            317 non-null    float64
+ 4   Protein2            317 non-null    float64
+ 5   Protein3            317 non-null    float64
+ 6   Protein4            317 non-null    float64
+ 7   Tumour_Stage        317 non-null    object 
+ 8   Histology           317 non-null    object 
+ 9   ER status           317 non-null    object 
+ 10  PR status           317 non-null    object 
+ 11  HER2 status         317 non-null    object 
+ 12  Surgery_type        317 non-null    object 
+ 13  Date_of_Surgery     317 non-null    object 
+ 14  Date_of_Last_Visit  317 non-null    object 
+ 15  Patient_Status      317 non-null    object 
+dtypes: float64(5), object(11)
+memory usage: 42.1+ KB
+None
+_____
+**Extraction of summary**
+              Age    Protein1    Protein2    Protein3    Protein4
+count  317.000000  317.000000  317.000000  317.000000  317.000000
+mean    58.725552   -0.027232    0.949557   -0.095104    0.006713
+std     12.827374    0.543858    0.906153    0.589027    0.625965
+min     29.000000   -2.144600   -0.978730   -1.627400   -2.025500
+25%     49.000000   -0.350600    0.368840   -0.531360   -0.382240
+50%     58.000000    0.005649    0.997130   -0.193040    0.038522
+75%     67.000000    0.336260    1.612000    0.251210    0.436250
+max     90.000000    1.593600    3.402200    2.193400    1.629900
+_____
+**Extraction of value counts**
+Gender
+FEMALE    313
+MALE        4
+Name: count, dtype: int64
+ER status
+Positive    317
+Name: count, dtype: int64
+PR status
+Positive    317
+Name: count, dtype: int64
+HER2 status
+Negative    288
+Positive     29
+Name: count, dtype: int64
+_____
+**Converting categorical variables to numeric**
+     Patient_ID   Age  ...  Date_of_Last_Visit  Patient_Status
+0  TCGA-D8-A1XD  36.0  ...           19-Jun-17               1
+1  TCGA-EW-A1OX  43.0  ...           09-Nov-18               0
+2  TCGA-A8-A079  69.0  ...           09-Jun-18               1
+3  TCGA-D8-A1XR  56.0  ...           12-Jul-17               1
+4  TCGA-BH-A0BF  56.0  ...           27-Jun-19               0
+
+[5 rows x 16 columns]
+_____
+**Hyperparameter tuning**
+Best hyperparameters: {'C': 0.1, 'gamma': 0.1, 'kernel': 'linear'}
+_____
+**Accuracy score**
+Accuracy on test set: 83
+_____
+**Predictions on new data**
+New Features : [36.0, 1, 0.080353, 0.42638, 0.54715, 0.27368, 3, 1, 1, 1, 2, 2]
+Prediction : Alive

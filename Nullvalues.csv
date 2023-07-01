@@ -1,0 +1,17 @@
+columnName,numberValues
+Patient_ID,7
+Age,7
+Gender,7
+Protein1,7
+Protein2,7
+Protein3,7
+Protein4,7
+Tumour_Stage,7
+Histology,7
+ER status,7
+PR status,7
+HER2 status,7
+Surgery_type,7
+Date_of_Surgery,7
+Date_of_Last_Visit,24
+Patient_Status,20
