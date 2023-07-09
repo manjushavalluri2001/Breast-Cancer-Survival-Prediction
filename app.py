@@ -1,8 +1,7 @@
 import streamlit as st
 import pickle
 import base64
-from streamlit_option_m
-enu import option_menu
+from streamlit_option_menu import option_menu
 with open("model.pkl","rb") as file:
     model = pickle.load(file)
 st.set_page_config(page_icon='',layout='wide',initial_sidebar_state='expanded')
