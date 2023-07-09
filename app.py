@@ -4,9 +4,9 @@ import base64
 from streamlit_option_menu import option_menu
 with open("model.pkl","rb") as file:
     model = pickle.load(file)
-st.set_page_config(page_icon='',layout='wide',initial_sidebar_state='expanded')
+st.set_page_config(page_icon='🎗️',page_title='Breast Cancer Prediction App',layout='wide',initial_sidebar_state='expanded')
 with st.sidebar:
-    option = option_menu("Main menu",["Home","About","EDA Report","Application"],icons=['house','database',"",'gear'], menu_icon="cast",orientation="vertical",default_index=3)
+    option = option_menu("Main menu",["Home","About","EDA Report","Application"],icons=['house','database',"",'gear'], menu_icon="cast",orientation="vertical")
 if option == "Home":
     st.image("Images/home.png",use_column_width=True)
 if option == "About":
@@ -74,7 +74,7 @@ By conducting EDA, data analysts and scientists can gain a deeper understanding 
     # Display the download link
     st.markdown(download_link, unsafe_allow_html=True)
 if option == "Application":
-    st.markdown("<h1>Prediction App</h1",unsafe_allow_html=True)
+    st.markdown("<h1 style='background-color:#f9adcf;padding:10px;border-radius:10px;text-align:center;'>Prediction App</h1",unsafe_allow_html=True)
     cols = st.columns(2)
     Age = cols[0].number_input("Enter age of patient")
     gender = {"MALE": 0, "FEMALE": 1}
